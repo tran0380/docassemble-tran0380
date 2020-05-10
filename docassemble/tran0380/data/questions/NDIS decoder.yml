@@ -1,0 +1,87 @@
+---
+# disclaimer page
+field: intro_screen
+question: Welcome to the interview!
+subquestion: |
+  This guided interview is intended to be informative and assist you to better understand your NDIS funding plan.
+  
+  The information provided is not endorsed by the NDIS and should only be used as a guide.
+  
+  We recommend contacting the Royal Society for the Blind for further information.
+
+  To get started, press **Continue**.
+under: |
+  **NOTE:** information is **current as at July 2020.**
+---
+# final display page
+mandatory: true
+need: intro_screen
+field: summary_screen
+question: Summary
+subquestion: |
+  Below is a summary of the information you have requested.
+  
+  **information goes here however we want to present it**
+  
+  % if support_type['core']:
+  **CORE SUPPORT**
+  
+  Insert info here.
+  % endif
+  
+  % if support_type['capital']:
+  **CAPITAL**
+  
+  Insert info here.
+  % endif
+  
+  % if support_type['capacity']:
+  **CAPACITY BUILDING**
+  
+  Insert info here.
+  % endif
+  
+  We highly recommend downloading this information for easy reference.
+
+attachment:
+  name: Understanding your NDIS funding plan
+  filename: Understanding_your_NDIS_funding_plan
+  docx template file: Understanding_your_NDIS_funding_plan.docx
+  valid formats:
+  - pdf
+
+buttons:
+  - Finished: exit
+    url: https://google.com
+  - Restart: restart
+---
+question: |
+  What would you like to know more about?
+subquestion: |
+  There are **THREE** support purposes under the NDIS. Each purpose has a number of support categories:
+  
+  - **CORE SUPPORTS** - 
+    
+    **Support categories:** Assistance with daily life, Transport, Consumables, Assistance with social and community participation
+  
+  - **CAPITAL** - 
+    
+    **Support categories:** Home modifications and Assistive Technology
+  
+  - **CAPACITY BUILDING** - 
+  
+    **Support categories:** Coordination of supports, Improved living arrangements, Increased social and community participation, Job Assistance, Improved relations, health and wellbeing, learning, life choices and daily living.
+  
+  More information can be found in the NDIS Pricing Guide. Click [here](https://www.ndis.gov.au/providers/price-guides-and-pricing) for more information.
+fields: 
+  - "Tick the boxes you would like information on": support_type
+    datatype: checkboxes
+    choices:
+      - Core Support: core
+      - Capital Support: capital
+      - Capacity Building: capacity
+      - All of the above: all_support_type
+---
+# Core Support info
+question: |
+  
